@@ -249,6 +249,16 @@ patterns:
   - include: source.swift
 
 - name: markup.raw.block.markdown markup.raw.block.fenced.markdown
+  begin: (```|~~~|{%\s*highlight)\s*(kotlin)\s*((?:linenos\s*)?%})?$
+  end: (```|~~~|{%\s*endhighlight\s*%})\n
+  captures:
+    '1': {name: punctuation.definition.fenced.markdown}
+    '2': {name: variable.language.fenced.markdown}
+    '3': {name: punctuation.definition.fenced.markdown}
+  patterns:
+  - include: source.Kotlin
+
+- name: markup.raw.block.markdown markup.raw.block.fenced.markdown
   begin: (```|~~~|{%\s*highlight)\s*(obj(?:ective\-|)c)\s*((?:linenos\s*)?%})?$
   end: (```|~~~|{%\s*endhighlight\s*%})\n
   captures:

@@ -1184,6 +1184,27 @@
         {
             "name": "markup.raw.block.markdown markup.raw.block.fenced.markdown", 
             "end": "(```|~~~|{%\\s*endhighlight\\s*%})\\n", 
+            "begin": "(```|~~~|{%\\s*highlight)\\s*(kotlin)\\s*((?:linenos\\s*)?%})?$", 
+            "patterns": [
+                {
+                    "include": "source.Kotlin"
+                }
+            ], 
+            "captures": {
+                "1": {
+                    "name": "punctuation.definition.fenced.markdown"
+                }, 
+                "2": {
+                    "name": "variable.language.fenced.markdown"
+                }, 
+                "3": {
+                    "name": "punctuation.definition.fenced.markdown"
+                }
+            }
+        }, 
+        {
+            "name": "markup.raw.block.markdown markup.raw.block.fenced.markdown", 
+            "end": "(```|~~~|{%\\s*endhighlight\\s*%})\\n", 
             "begin": "(```|~~~|{%\\s*highlight)\\s*(obj(?:ective\\-|)c)\\s*((?:linenos\\s*)?%})?$", 
             "patterns": [
                 {
